@@ -1,5 +1,4 @@
-python -m venv env
+python3 -m venv env
 
-source /var/www/virus-data-voila/env/bin/activate
+source ~/env/bin/activate
 
-cd /var/www/virus-data-voila/scripts
