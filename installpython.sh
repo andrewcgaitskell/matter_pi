@@ -9,3 +9,5 @@ sudo apt install libpq-dev
 sudo apt install python3-pip
 
 sudo apt install python3-venv
+
+sudo apt-get install libatlas-base-dev
