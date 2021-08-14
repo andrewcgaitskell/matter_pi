@@ -65,18 +65,45 @@ You can mount your storage device at a specific folder location. It is conventio
      ls /mnt/mydisk
 
 
+# Setting up Automatic Mounting
+
+You can modify the fstab file to define the location where the storage device will be automatically mounted when the Raspberry Pi starts up. In the fstab file, the disk partition is identified by the universally unique identifier (UUID).
+
+    Get the UUID of the disk partition:
+
+     sudo blkid
+
+    Find the disk partition from the list and note the UUID. For example, 5C24-1453.
+
+    Open the fstab file using a command line editor such as nano:
+
+     sudo nano /etc/fstab
+
+    Add the following line in the fstab file:
+
+     UUID=5C24-1453 /mnt/mydisk fstype defaults,auto,users,rw,nofail 0 0
+
+    Replace fstype with the type of your file system, which you found in step 2 of 'Mounting a storage device' above, for example: ntfs.
+
+    If the filesystem type is FAT or NTFS, add ,umask=000 immediately after nofail - this will allow all users full read/write access to every file on the storage device.
+
+Now that you have set an entry in fstab, you can start up your Raspberry Pi with or without the storage device attached. Before you unplug the device you must either shut down the Pi, or manually unmount it using the steps in 'Unmounting a storage device' below.
+Note
+	if you do not have the storage device attached when the Pi starts, the Pi will take an extra 90 seconds to start up. You can shorten this by adding ,x-systemd.device-timeout=30 immediately after nofail in step 4. This will change the timeout to 30 seconds, meaning the system will only wait 30 seconds before giving up trying to mount the disk.
+
+For more information on each Linux command, refer to the specific manual page using the man command. For example, man fstab.
 
 
 
-Fixing the IP address of the Pi
+# Fixing the IP address of the Pi
 
 https://www.raspberrypi.org/documentation/remote-access/ip-address.md
 
-Finding MAC Address of Pi
+# Finding MAC Address of Pi
 
 https://www.raspberrypi-spy.co.uk/2012/06/finding-the-mac-address-of-a-raspberry-pi/
 
-Setting Up NAS
+# Setting Up NAS
 
 https://eltechs.com/raspberry-pi-nas-guide/
 
@@ -86,7 +113,7 @@ Needed to add Pi as user and restart
 https://elinux.org/R-Pi_NAS
 
 
-Renaming Media Files and Adding Tags from Original File Locations
+# Renaming Media Files and Adding Tags from Original File Locations
 
 Needed Pip3 Installed
 
@@ -100,7 +127,7 @@ https://packages.debian.org/jessie/python-pyexiv2
 
 sudo apt-get install python-pyexiv2
 
-Installing Postgres
+# Installing Postgres
 
 https://opensource.com/article/17/10/set-postgres-database-your-raspberry-pi
 
