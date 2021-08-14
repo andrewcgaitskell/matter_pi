@@ -74,6 +74,8 @@ You can modify the fstab file to define the location where the storage device wi
      sudo blkid
 
     Find the disk partition from the list and note the UUID. For example, 5C24-1453.
+    
+    UUID="59F4-5DFC"
 
     Open the fstab file using a command line editor such as nano:
 
@@ -81,7 +83,10 @@ You can modify the fstab file to define the location where the storage device wi
 
     Add the following line in the fstab file:
 
-     UUID=5C24-1453 /mnt/mydisk fstype defaults,auto,users,rw,nofail 0 0
+     UUID=59F4-5DFC /mnt/mydisk fstype defaults,auto,users,rw,nofail 0 0
+     
+     UUID=59F4-5DFC /mnt/mydisk ntfs defaults,auto,users,rw,nofail,umask=000 0 0
+     
 
     Replace fstype with the type of your file system, which you found in step 2 of 'Mounting a storage device' above, for example: ntfs.
 
