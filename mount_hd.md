@@ -1,0 +1,74 @@
+sing Rasperry Pi 3
+
+https://www.raspberrypi.org/downloads/noobs/
+
+NOOBS_lite_v2_8.zip
+
+https://www.raspberrypi.org/documentation/configuration/raspi-config.md
+
+sudo raspi-config
+  auto login
+  enable ssh
+  setup wifi
+
+
+https://www.raspberrypi.org/documentation/raspbian/updating.md
+
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get dist-upgrade
+
+Connecting External HDD to Pi and making it automatic  
+https://www.raspberrypi.org/documentation/configuration/external-storage.md
+
+sudo apt-get install exfat-fuse
+
+---------- max plex --------
+
+sudo lsblk -o UUID,NAME,FSTYPE,SIZE,MOUNTPOINT,LABEL,MODEL
+
+59F4-5DFC
+
+max 005C-663A /dev/sda1
+
+UUID="36557FF8557FB7E7"
+
+UUID="36557FF8557FB7E7" /mnt/PIHDD exfat defaults,auto,umask=000,users,rw 0 0
+
+Fixing the IP address of the Pi
+https://www.raspberrypi.org/documentation/remote-access/ip-address.md
+
+Findin Mac Address of Pi
+https://www.raspberrypi-spy.co.uk/2012/06/finding-the-mac-address-of-a-raspberry-pi/
+
+Setting Up NAS
+https://eltechs.com/raspberry-pi-nas-guide/
+Needed to add Pi as user and restart
+
+
+https://elinux.org/R-Pi_NAS
+
+Setting Up Plex
+https://thepi.io/how-to-set-up-a-raspberry-pi-plex-server/
+
+192.168.1.11
+
+Renaming Media Files and Adding Tags from Original File Locations
+
+Needed Pip3 Installed
+sudo apt-get install python3-pip
+
+Useful Diagram to get from Epoc Seconds to ISO Date & Time
+https://wiki.python.org/moin/WorkingWithTime
+
+https://packages.debian.org/jessie/python-pyexiv2
+sudo apt-get install python-pyexiv2
+
+Installing Postgres
+https://opensource.com/article/17/10/set-postgres-database-your-raspberry-pi
+
+sudo apt install postgresql libpq-dev postgresql-client postgresql-client-common -y
+
+Using Apple TV Gen 2 as Plex Viewer
+
+https://github.com/iBaa/PlexConnect/wiki/Install-Guide-Linux
