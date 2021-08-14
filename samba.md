@@ -2,10 +2,11 @@ https://www.raspberrypi.org/documentation/computers/configuration.html
 
 Step 2: Install Samba on our Raspberry Pi
 
-    After your Raspbian operating system is up to date, now we will have to install the Samba software on the Raspberry Pi.
-    To install the Samba packages, key in the following command: 
+After your Raspbian operating system is up to date, now we will have to install the Samba software on the Raspberry Pi.
 
-sudo apt-get install samba samba-common-bin
+To install the Samba packages, key in the following command: 
+
+     sudo apt-get install samba samba-common-bin
 
 Step 3: Creating a Shared Folder
 
@@ -30,8 +31,8 @@ Step 5: Define Sharing Parameters
 
     Within this file, add the following to the bottom. This text defines various details of share. 
 
-[seeedstudioshare]
-path = /home/pi/shared
+[mydiskshare]
+path = /mnt/mydisk
 writeable=Yes
 create mask=0777
 directory mask=0777
@@ -57,6 +58,10 @@ Step 7: Make a User for Samba on the Raspberry Pi
     We will run a command to create a Samba user called “Pi”:
 
 sudo smbpasswd -a pi
+
+sudo smbpasswd -a <user_name>
+
+
 
     After running this command, you will be prompted to set a password that is up to you.
     With this user “Pi” you can access and manage the Samba folder from Windows, macOS, or other Raspberry Pi devices
