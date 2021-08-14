@@ -21,19 +21,52 @@ https://www.raspberrypi.org/documentation/raspbian/updating.md
 Connecting External HDD to Pi and making it automatic  
 https://www.raspberrypi.org/documentation/configuration/external-storage.md
 
-    sudo apt-get install exfat-fuse
 
----------- max plex --------
+Mounting a Storage Device
 
-sudo lsblk -o UUID,NAME,FSTYPE,SIZE,MOUNTPOINT,LABEL,MODEL
+You can mount your storage device at a specific folder location. It is conventional to do this within the /mnt folder, for example /mnt/mydisk. Note that the folder must be empty.
 
-59F4-5DFC
+    Plug the storage device into a USB port on the Raspberry Pi.
 
-max 005C-663A /dev/sda1
+    List all the disk partitions on the Pi using the following command:
 
-UUID="36557FF8557FB7E7"
+     sudo lsblk -o UUID,NAME,FSTYPE,SIZE,MOUNTPOINT,LABEL,MODEL
 
-UUID="36557FF8557FB7E7" /mnt/PIHDD exfat defaults,auto,umask=000,users,rw 0 0
+    The Raspberry Pi uses mount points / and /boot. Your storage device will show up in this list, along with any other connected storage.
+
+    Use the SIZE, LABEL, and MODEL columns to identify the name of the disk partition that points to your storage device. For example, sda1.
+
+    The FSTYPE column contains the filesystem type. If your storage device uses an exFAT file system, install the exFAT driver:
+
+     sudo apt update
+     sudo apt install exfat-fuse
+
+    If your storage device uses an NTFS file system, you will have read-only access to it. If you want to write to the device, you can install the ntfs-3g driver:
+
+     sudo apt update
+     sudo apt install ntfs-3g
+
+    Run the following command to get the location of the disk partition:
+
+     sudo blkid
+
+    For example, /dev/sda1.
+
+    Create a target folder to be the mount point of the storage device. The mount point name used in this case is mydisk. You can specify a name of your choice:
+
+     sudo mkdir /mnt/mydisk
+
+    Mount the storage device at the mount point you created:
+
+     sudo mount /dev/sda1 /mnt/mydisk
+
+    Verify that the storage device is mounted successfully by listing the contents:
+
+     ls /mnt/mydisk
+
+
+
+
 
 Fixing the IP address of the Pi
 
