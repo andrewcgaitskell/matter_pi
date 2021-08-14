@@ -85,7 +85,14 @@ You can modify the fstab file to define the location where the storage device wi
 
      UUID=59F4-5DFC /mnt/mydisk fstype defaults,auto,users,rw,nofail 0 0
      
-     UUID=59F4-5DFC /mnt/mydisk ntfs defaults,auto,users,rw,nofail,umask=000 0 0
+     UUID=59F4-5DFC /mnt/mydisk exfat defaults,auto,users,rw,nofail,umask=000 0 0
+     
+     
+     diagnosing
+     
+     sudo mount -o uid=1000,gid=1000,noatime,umask=007 --uuid 780C18A30C185E86 /External
+     
+     sudo mount UUID=59F4-5DFC ntfs defaults,auto,users,rw,nofail,umask=000 0 0 /mnt/mydisk
      
 
     Replace fstype with the type of your file system, which you found in step 2 of 'Mounting a storage device' above, for example: ntfs.
