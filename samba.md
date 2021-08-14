@@ -1,3 +1,5 @@
+https://www.raspberrypi.org/documentation/computers/configuration.html
+
 Step 2: Install Samba on our Raspberry Pi
 
     After your Raspbian operating system is up to date, now we will have to install the Samba software on the Raspberry Pi.
