@@ -1,0 +1,12 @@
+[Unit]
+Description=TCP Server Service
+After=multi-user.target
+
+[Service]
+Type=idle
+ExecStart=/home/pi/env/bin/python /home/pi/pi64/tcp_server.py
+WorkingDirectory=/home/pi/pi64
+User=pi
+
+[Install]
+WantedBy=multi-user.target
