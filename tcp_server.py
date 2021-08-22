@@ -48,7 +48,7 @@ while True:
             mac4_string = hex(sensorbytes[7])[2:]
             mac5_string = hex(sensorbytes[8])[2:]
             
-            full_mac = mac0_string + ":" + mac1_string + ":" + mac2_string + ":" + mac3_string + ":" + mac4_string + ":" + mac5_string + ":" + mac6_string
+            full_mac = mac0_string + ":" + mac1_string + ":" + mac2_string + ":" + mac3_string + ":" + mac4_string + ":" + mac5_string
             
             
             ##sensorvalue = int.from_bytes(sensorcontet, byteorder='big')
