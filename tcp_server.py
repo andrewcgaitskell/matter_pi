@@ -56,7 +56,7 @@ while True:
             #print("band:", band, " sensor value:",sensorvalue)
             index = index + 1
             sqlcmnd = f"INSERT INTO public.raw_sensordata_with_mac(index, millitime, band, value, mac)\
-            VALUES ({index}, EXTRACT(EPOCH FROM (SELECT NOW())) * 1000, {band}, {sensorvalue}, {full_mac})"
+            VALUES ({index}, EXTRACT(EPOCH FROM (SELECT NOW())) * 1000, {band}, {sensorvalue}, '{full_mac}')"
     
             #sqlcmnd = 'COPY "raw_CovidTrackerGantt" FROM \''+ filename + '\' DELIMITER \',\' CSV;'
             with engine.connect().execution_options(autocommit=True) as con:
