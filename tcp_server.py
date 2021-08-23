@@ -61,7 +61,7 @@ while True:
                 #sqlcmnd = 'COPY "raw_CovidTrackerGantt" FROM \''+ filename + '\' DELIMITER \',\' CSV;'
                 with engine.connect().execution_options(autocommit=True) as con:
                   con.execute(sqlcmnd)
-             except:
+            except:
                 continue
     #print(chunks)
     #client_sock.sendall(b''.join(chunks))
