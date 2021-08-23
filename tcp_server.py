@@ -25,7 +25,7 @@ serv_sock.listen(10)
 index = 0
 
 ###
-
+"""
 try:
     while 1:
         newSocket, address = sock.accept(  )
@@ -41,7 +41,7 @@ try:
 finally:
     sock.close(  )
 ####
-
+"""
 
 while True:
     # Accept new connections in an infinite loop.
