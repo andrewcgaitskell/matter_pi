@@ -38,4 +38,4 @@ try:
       newSocket.close(  )
       print("Disconnected from", address)
 finally:
-    sock.close(  )
+    serv_sock.close(  )
