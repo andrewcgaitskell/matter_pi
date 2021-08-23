@@ -99,8 +99,8 @@ while True:
               con.execute(sqlcmnd)
             #except:
             #    pass
-            print(sqlcmnd)
-            time.sleep(1) # Sleep for 3 seconds
+            #print(sqlcmnd)
+            #time.sleep(1) # Sleep for 3 seconds
             #client_sock.sendall(b''.join(chunks))
     ##client_sock.close()
     ##print("Disconnected from", client_addr)
