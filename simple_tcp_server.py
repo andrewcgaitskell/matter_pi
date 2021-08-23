@@ -15,7 +15,7 @@ import os
 # Create server socket.
 serv_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM, proto=0)
 serv_sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-serv_sock.settimeout(10)
+##serv_sock.settimeout(10)
 
 
 # Bind server socket to loopback network interface.
