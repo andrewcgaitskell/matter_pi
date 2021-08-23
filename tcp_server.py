@@ -12,6 +12,8 @@ import psycopg2
 
 import os
 
+import time
+
 engine = create_engine('postgresql://pythonuser:pythonuser@localhost:5432/data')
 
 # Create server socket.
@@ -97,7 +99,8 @@ while True:
               con.execute(sqlcmnd)
             #except:
             #    pass
-            #print(chunks)
+            print(sqlcmnd)
+            time.sleep(1) # Sleep for 3 seconds
             #client_sock.sendall(b''.join(chunks))
     ##client_sock.close()
     ##print("Disconnected from", client_addr)
