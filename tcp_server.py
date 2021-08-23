@@ -17,6 +17,9 @@ engine = create_engine('postgresql://pythonuser:pythonuser@localhost:5432/data')
 # Create server socket.
 serv_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM, proto=0)
 
+serv_sock.settimeout(1)
+
+
 # Bind server socket to loopback network interface.
 serv_sock.bind(('', 5010))
 
