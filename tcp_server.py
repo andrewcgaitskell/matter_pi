@@ -99,6 +99,6 @@ while True:
             #    pass
             #print(chunks)
             #client_sock.sendall(b''.join(chunks))
-    client_sock.close()
-    print("Disconnected from", client_addr)
+    ##client_sock.close()
+    ##print("Disconnected from", client_addr)
                 
