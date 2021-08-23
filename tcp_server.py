@@ -23,6 +23,26 @@ serv_sock.bind(('', 5010))
 # Turn server socket into listening mode.
 serv_sock.listen(10)
 index = 0
+
+###
+
+try:
+    while 1:
+        newSocket, address = sock.accept(  )
+        print "Connected from", address
+        # loop serving the new client
+        while 1:
+            receivedData = newSocket.recv(1024)
+            if not receivedData: break
+            # Echo back the same data you just received
+            newSocket.send(receivedData)
+        newSocket.close(  )
+        print "Disconnected from", address
+finally:
+    sock.close(  )
+####
+
+
 while True:
     # Accept new connections in an infinite loop.
     client_sock, client_addr = serv_sock.accept()
@@ -63,6 +83,7 @@ while True:
                   con.execute(sqlcmnd)
             except:
                 pass
-    #print(chunks)
-    #client_sock.sendall(b''.join(chunks))
-    client_sock.close()
+        #print(chunks)
+        #client_sock.sendall(b''.join(chunks))
+        client_sock.close()
+        print("Disconnected from", client_addr)
