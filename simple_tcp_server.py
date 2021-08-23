@@ -27,16 +27,15 @@ index = 0
 
 try:
   while 1:
+      newSocket, address = serv_sock.accept(  )
+      print("Connected from", address)
+      # loop serving the new client
       while 1:
-          newSocket, address = sock.accept(  )
-          print("Connected from", address)
-          # loop serving the new client
-          while 1:
-              receivedData = newSocket.recv(1024)
-              if not receivedData: break
-              # Echo back the same data you just received
-              newSocket.send(receivedData)
-          newSocket.close(  )
-          print("Disconnected from", address)
+          receivedData = newSocket.recv(1024)
+          if not receivedData: break
+          # Echo back the same data you just received
+          newSocket.send(receivedData)
+      newSocket.close(  )
+      print("Disconnected from", address)
 finally:
     sock.close(  )
