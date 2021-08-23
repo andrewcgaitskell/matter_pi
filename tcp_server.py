@@ -62,7 +62,7 @@ while True:
                 with engine.connect().execution_options(autocommit=True) as con:
                   con.execute(sqlcmnd)
             except:
-                continue
+                pass
     #print(chunks)
     #client_sock.sendall(b''.join(chunks))
     client_sock.close()
