@@ -60,32 +60,32 @@ while True:
  
         else:
             ##print(content)
-            try:
-                sensorbytes = list(content)
-                band = sensorbytes[0]
-                sensorvalue = sensorbytes[1] * 256 + sensorbytes[2]
+            #try:
+            sensorbytes = list(content)
+            band = sensorbytes[0]
+            sensorvalue = sensorbytes[1] * 256 + sensorbytes[2]
 
-                mac0_string = hex(sensorbytes[3])[2:].zfill(2)
-                mac1_string = hex(sensorbytes[4])[2:].zfill(2)
-                mac2_string = hex(sensorbytes[5])[2:].zfill(2)
-                mac3_string = hex(sensorbytes[6])[2:].zfill(2)
-                mac4_string = hex(sensorbytes[7])[2:].zfill(2)
-                mac5_string = hex(sensorbytes[8])[2:].zfill(2)
+            mac0_string = hex(sensorbytes[3])[2:].zfill(2)
+            mac1_string = hex(sensorbytes[4])[2:].zfill(2)
+            mac2_string = hex(sensorbytes[5])[2:].zfill(2)
+            mac3_string = hex(sensorbytes[6])[2:].zfill(2)
+            mac4_string = hex(sensorbytes[7])[2:].zfill(2)
+            mac5_string = hex(sensorbytes[8])[2:].zfill(2)
 
-                full_mac = mac5_string + ":" + mac4_string + ":" + mac3_string + ":" + mac2_string + ":" + mac1_string + ":" + mac0_string
+            full_mac = mac5_string + ":" + mac4_string + ":" + mac3_string + ":" + mac2_string + ":" + mac1_string + ":" + mac0_string
 
 
-                ##sensorvalue = int.from_bytes(sensorcontet, byteorder='big')
-                #print("band:", band, " sensor value:",sensorvalue)
-                index = index + 1
-                sqlcmnd = f"INSERT INTO public.raw_sensordata_with_mac(index, millitime, band, value, mac)\
-                VALUES ({index}, EXTRACT(EPOCH FROM (SELECT NOW())) * 1000, {band}, {sensorvalue}, '{full_mac}')"
+            ##sensorvalue = int.from_bytes(sensorcontet, byteorder='big')
+            #print("band:", band, " sensor value:",sensorvalue)
+            index = index + 1
+            sqlcmnd = f"INSERT INTO public.raw_sensordata_with_mac(index, millitime, band, value, mac)\
+            VALUES ({index}, EXTRACT(EPOCH FROM (SELECT NOW())) * 1000, {band}, {sensorvalue}, '{full_mac}')"
 
-                #sqlcmnd = 'COPY "raw_CovidTrackerGantt" FROM \''+ filename + '\' DELIMITER \',\' CSV;'
-                with engine.connect().execution_options(autocommit=True) as con:
-                  con.execute(sqlcmnd)
-            except:
-                pass
+            #sqlcmnd = 'COPY "raw_CovidTrackerGantt" FROM \''+ filename + '\' DELIMITER \',\' CSV;'
+            with engine.connect().execution_options(autocommit=True) as con:
+              con.execute(sqlcmnd)
+            #except:
+            #    pass
         #print(chunks)
         #client_sock.sendall(b''.join(chunks))
         client_sock.close()
