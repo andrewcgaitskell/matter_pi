@@ -23,8 +23,9 @@ def recvmsg(clientsocket, address):
     print(f"Connection from {address} has been established.")
     while True:
         try:
-            msg = clientsocket.recv(6)
+            msg = clientsocket.recv(17)
             print(msg)
+            clientsocket.recv(17)
             time.sleep(1)
         except ConnectionError:
             print(f"Connection from {address} has been lost.")
