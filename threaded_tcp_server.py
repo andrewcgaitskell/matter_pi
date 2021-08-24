@@ -29,7 +29,7 @@ def recvmsg(clientsocket, address):
                 connections.remove(clientsocket)
             return
         for connection in connections: #iterates through the connections array and sends message to each one
-            msgbreak = 'hello'
+            msgbreak = 'hello$'
             try:
                 connection.send(b'hello')
             except ConnectionError:
