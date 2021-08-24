@@ -6,7 +6,8 @@ import threading
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM) #Connection oriented, IPV4
 
-s.bind((socket.gethostname(), 5010))#Ip address information, port
+#s.bind((socket.gethostname(), 5010))#Ip address information, port
+s.bind(('', 5010))
 s.listen(5)
 
 connections = [] #Connection added to this list every time a client connects
