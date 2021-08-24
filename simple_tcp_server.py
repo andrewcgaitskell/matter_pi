@@ -31,7 +31,7 @@ try:
       print("Connected from", address)
       # loop serving the new client
       while 1:
-          receivedData = newSocket.recv(1024)
+          receivedData = newSocket.recv(9)
           if not receivedData: break
           # Echo back the same data you just received
           newSocket.send(receivedData)
