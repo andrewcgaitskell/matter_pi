@@ -29,9 +29,9 @@ def recvmsg(clientsocket, address):
                 connections.remove(clientsocket)
             return
         for connection in connections: #iterates through the connections array and sends message to each one
-            msgbreak = 'thank you'
+            msgbreak = 'hello'
             try:
-                connection.send(bytes(str(msgbreak.decode("utf-8")), "utf-8"))
+                connection.send(bytes(msgbreak))
             except ConnectionError:
                  print(f"Unable to reach client with socket {connection}")
                  if connection in connections:
