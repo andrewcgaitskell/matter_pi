@@ -25,7 +25,10 @@ def recvmsg(clientsocket, address):
         try:
             msg = clientsocket.recv(17)
             print(msg)
-            connection.send(b'thank you$')
+            ##data = "Hello Server!";
+
+            ##clientSocket.send(data.encode());
+            clientsocket.send(b'thank you$')
             time.sleep(1)
         except ConnectionError:
             print(f"Connection from {address} has been lost.")
