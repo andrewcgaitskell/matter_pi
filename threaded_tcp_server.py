@@ -2,6 +2,7 @@
 
 import socket
 import threading
+import time
 
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM) #Connection oriented, IPV4
@@ -24,6 +25,7 @@ def recvmsg(clientsocket, address):
         try:
             msg = clientsocket.recv(6)
             print(msg)
+            time.sleep(1)
         except ConnectionError:
             print(f"Connection from {address} has been lost.")
             if clientsocket in connections:
