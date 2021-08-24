@@ -28,10 +28,8 @@ def recvmsg(clientsocket, address):
             if clientsocket in connections:
                 connections.remove(clientsocket)
             return
-        if len(msg.decode('utf-8')) > 0:
-            print(msg.decode("utf-8"))
         for connection in connections: #iterates through the connections array and sends message to each one
-            msgbreak = msg
+            msgbreak = 'thank you'
             try:
                 connection.send(bytes(str(msgbreak.decode("utf-8")), "utf-8"))
             except ConnectionError:
