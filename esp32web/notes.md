@@ -7,3 +7,5 @@ https://randomnerdtutorials.com/esp32-web-server-spiffs-spi-flash-file-system/
 
 https://learn.sparkfun.com/tutorials/esp32-relay-web-server/all
 
+https://randomnerdtutorials.com/esp32-esp8266-relay-web-server/
+
