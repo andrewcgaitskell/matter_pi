@@ -6,15 +6,30 @@ pip also already installed - 20.3.4
 
 git also already version - 2.30.2
 
+# install system libraries
+
+sudo apt install flac
+
+
 # pipenv
 
 pip install --user pipenv
 
 export PATH=/home/pi/.local/bin:$PATH
 
-# install packages
+# install python packages
 
-pipenv install pandas
+pipenv shell
+
+pip install pandas
+
+pip install pyaudio
+
+pip install jupyter
+
+pip install pocketsphinx
+
+pip install SpeechRecognition
 
 
 
