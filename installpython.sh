@@ -10,12 +10,23 @@ git also already version - 2.30.2
 
 sudo apt install flac
 
+sudo apt install llvm
 
 # pipenv
 
 pip install --user pipenv
 
 export PATH=/home/pi/.local/bin:$PATH
+
+edit Pipfile and make sure it has latest version of Python
+
+# remove the virtial environment
+
+pipenv -rm
+
+# recreate the virtual environment
+
+pipenv install
 
 # install python packages
 
@@ -31,6 +42,11 @@ pip install pocketsphinx
 
 pip install SpeechRecognition
 
+pip install librosa
+
+# exit virtual environment
+
+exit
 
 
 # original before upgrade to bullseye
