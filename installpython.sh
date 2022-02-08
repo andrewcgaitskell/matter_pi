@@ -1,3 +1,14 @@
+# python and bullseye
+
+python is already 3.9.2
+
+
+
+
+# original before upgrade to bullseye
+
+please note it was a mistake to try and upgrade to bullseye by editing apt path
+
 sudo apt install python-software-properties
 
 sudo apt install software-properties-common
