@@ -2,6 +2,10 @@
 
 python is already 3.9.2
 
+pip also already installed - 20.3.4
+
+git also already version - 2.30.2
+
 
 
 
