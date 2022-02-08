@@ -6,6 +6,15 @@ pip also already installed - 20.3.4
 
 git also already version - 2.30.2
 
+# pipenv
+
+pip install --user pipenv
+
+export PATH=/home/pi/.local/bin:$PATH
+
+# install packages
+
+pipenv install pandas
 
 
 
