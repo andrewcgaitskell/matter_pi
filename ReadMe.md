@@ -46,6 +46,19 @@ nano Dockerfile
       add root.tar /
       CMD ["/bin/bash"]
 
+##
+
+# upgrade python
+
+https://raspberrytips.com/install-latest-python-raspberry-pi/
+
+
+# Podman Pull
+
+podman login docker.io
+
+podman push
+
 
 # Create Image
 
