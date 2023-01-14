@@ -22,7 +22,7 @@ wget https://downloads.raspberrypi.org/raspbian_lite/root.tar.xz
 
 may try:
 
-https://downloads.raspberrypi.org/raspios_lite_arm64/
+      https://downloads.raspberrypi.org/raspios_lite_arm64/root.tar.xz
 
 ## Unzip Raspian Image
 
