@@ -1,9 +1,5 @@
 Introduction
 
-Really do not like having to run led control as root.
-
-We should be able to create a raspian image that is run within the host and it will have access to just the GPIO.
-
 # Created a Pi with a Lite Image
 
 ## Installed Docker
