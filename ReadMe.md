@@ -49,8 +49,8 @@ nano Dockerfile
       RUN wget https://www.python.org/ftp/python/3.10.9/Python-3.10.9.tgz
       RUN tar -zxvf Python-3.10.9.tgz
       RUN cd Python-3.10.9
-      RUN ./configure --enable-optimizations
-      RUN make altinstall
+      RUN /bin/bash -c ./configure --enable-optimizations
+      RUN /bin/bash -c make altinstall
       CMD ["/bin/bash"]
 
 ##
