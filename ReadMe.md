@@ -43,6 +43,19 @@ Very straightforward way of creating a Docker image
 
 https://www.boulderes.com/resource-library/building-raspberry-pi-disk-images-with-docker-a-case-study-in-software-automation
 
+# Get root.tar file for latest bullseye
+      
+      wget https://downloads.raspberrypi.org/raspios_lite_arm64/images/raspios_lite_arm64-2022-09-26/2022-09-22-raspios-bullseye-arm64-lite.img.xz
+      unxz 2022-09-22-raspios-bullseye-arm64-lite.img.xz
+      cp 2022-09-22-raspios-bullseye-arm64-lite.img raspian.img
+      sudo su
+      
+      losetup -Pf raspian.img 
+      losetup -j raspian.img 
+      mount /dev/loop0p2 /mnt
+      tar cf root.tar -C /mnt .
+      umount /mnt
+
 # Create Dockerfile
 
 nano Dockerfile
@@ -50,7 +63,7 @@ nano Dockerfile
       from scratch
       user root
       add root.tar /
-      RUN apt-get update & apt-get upgrade
+      RUN apt-get update & apt-get -y upgrade
       RUN mkdir /home/python310
       RUN cd /home/python310
       RUN wget https://www.python.org/ftp/python/3.10.9/Python-3.10.9.tgz
@@ -60,11 +73,6 @@ nano Dockerfile
       CMD ["/bin/bash"]
 
 ##
-
-# upgrade python
-
-https://raspberrytips.com/install-latest-python-raspberry-pi/
-
 
 # Podman Pull
 
@@ -83,21 +91,15 @@ docker run --name mycontainer -d -i -t alpine /bin/sh
 
 docker run --name mypicont -d -i -t raspi-base:latest /bin/sh
 
+docker run --name cont_raspi-python310 -d -i -t raspi-python310:latest /bin/sh
+
 # Connect to Container
 
 docker exec -it mycontainer sh
 
 docker exec -it mypicont sh
 
-
-# Inside Container
-
-apt update
-apt upgrade
-
-# Exit container
-
-exit
+docker exec -it cont_raspi-python310 sh
 
 # List Containers
 
@@ -110,6 +112,31 @@ copy and paste into command below
 # Commit changes
 
 docker commit c2bb6383ff6e raspi-base:v1
+
+# Push Image to docker.io
+
+      docker login
+
+      docker image tag raspi-python310 andrewcgaitskell/raspi-python310:latest
+
+      docker push andrewcgaitskell/raspi-python310:latest
+
+
+# Logout of docker io and exit su
+
+      docker logout
+      
+      exit
+
+# Pull Image from docker.io in podman
+
+      podman login docker.io
+
+      podman pull docker.io/andrewcgaitskell/raspi-python310:latest
+
+# Create Container in Podman
+
+
 
 # Links found
 
