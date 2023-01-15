@@ -40,7 +40,7 @@ nano Dockerfile
       from scratch
       user root
       add root.tar /
-      RUN apt update & apt upgrade
+      RUN apt-get update & apt-get upgrade
       RUN mkdir /home/python310
       RUN cd /home/python310
       RUN wget https://www.python.org/ftp/python/3.10.9/Python-3.10.9.tgz
