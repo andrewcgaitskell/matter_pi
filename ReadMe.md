@@ -24,6 +24,16 @@ may try:
 
 unxz root.tar.xz
 
+## Current Operating System
+
+root@pi64:/home/pi64/code/docker# lsb_release -a
+No LSB modules are available.
+Distributor ID:	Debian
+Description:	Debian GNU/Linux 11 (bullseye)
+Release:	11
+Codename:	bullseye
+
+
 
 Easier approach to extracting the root filesystem and not the boot system
 
