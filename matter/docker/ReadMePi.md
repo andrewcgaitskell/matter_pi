@@ -31,7 +31,9 @@ https://computingforgeeks.com/how-to-install-python-on-ubuntu-linux-system/
         
         sudo make install
 
-# Preconditions
+# Prerequistes for idf
+
+        https://docs.espressif.com/projects/esp-idf/en/v4.4.2/esp32/get-started/index.html#step-1-install-prerequisites
 
         apt-get install git wget flex bison gperf python3-pip python3-setuptools cmake ninja-build ccache libffi-dev libssl-dev dfu-util libusb-1.0-0
 
@@ -51,6 +53,8 @@ https://computingforgeeks.com/how-to-install-python-on-ubuntu-linux-system/
 
 # prereq for matter sdk
 
+https://github.com/project-chip/connectedhomeip/blob/master/docs/guides/BUILDING.md#prerequisites
+
 apt-get install git gcc g++ pkg-config libssl-dev libdbus-1-dev \
      libglib2.0-dev libavahi-client-dev ninja-build python3-venv python3-dev \
      python3-pip unzip libgirepository1.0-dev libcairo2-dev libreadline-dev
@@ -64,6 +68,10 @@ apt-get install git gcc g++ pkg-config libssl-dev libdbus-1-dev \
         ./install.sh
         cd ..
 
+# configure envs
+
+cd /opt/esp/esp-idf; . ./export.sh; cd ..
+cd /opt/esp/esp-matter; . ./export.sh; cd ..
 
 # Docker Image
 
