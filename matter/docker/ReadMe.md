@@ -16,6 +16,10 @@ docker pull espressif/esp-matter:chip
 
 try the following
 
+all docker must be done as sudo
+
+sudo su
+
 docker run -t -i --device=/dev/ttyUSB0 ubuntu bash
 
 ### idf
@@ -24,15 +28,19 @@ as normal mode failed
 
 as root?
 
+sudo su
+
 docker run -t -i --device=/dev/ttyUSB0 espressif/idf:release-v4.4 bash
+
+saved and using local & changed version
+
+docker run -t -i --device=/dev/ttyUSB0 localhost/esp32s2v1:latest
+
+## not tried
 
 docker run -t -i --privileged -v /dev/bus/usb:/dev/bus/usb ubuntu bash
 
 docker run -t -i --privileged -v /dev/ttyUSB0:/dev/ttyUSB0 idf:latest bash
-
-localhost/esp32s2v1 
-
-docker run -t -i --device=/dev/ttyUSB0 localhost/esp32s2v1:latest
 
 ## inside container
 
