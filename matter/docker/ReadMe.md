@@ -18,7 +18,14 @@ try the following
 
 docker run -t -i --device=/dev/ttyUSB0 ubuntu bash
 
+### idf
 
 docker run -t -i --device=/dev/ttyUSB0 espressif/idf:release-v4.4 bash
 
 
+
+
+## matter
+
+
+docker run -t -i --device=/dev/ttyUSB0 espressif/esp-matter:chip bash
