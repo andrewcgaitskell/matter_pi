@@ -51,13 +51,13 @@ https://computingforgeeks.com/how-to-install-python-on-ubuntu-linux-system/
         cd /opt/esp/esp-idf/
         source export.sh
 
-# prereq for matter sdk
+# prerequisistes for matter sdk
 
 https://github.com/project-chip/connectedhomeip/blob/master/docs/guides/BUILDING.md#prerequisites
 
-apt-get install git gcc g++ pkg-config libssl-dev libdbus-1-dev \
-     libglib2.0-dev libavahi-client-dev ninja-build python3-venv python3-dev \
-     python3-pip unzip libgirepository1.0-dev libcairo2-dev libreadline-dev
+        apt-get install git gcc g++ pkg-config libssl-dev libdbus-1-dev \
+             libglib2.0-dev libavahi-client-dev ninja-build python3-venv python3-dev \
+             python3-pip unzip libgirepository1.0-dev libcairo2-dev libreadline-dev
 
 # install matter sdk
 
