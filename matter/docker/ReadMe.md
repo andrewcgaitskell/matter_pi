@@ -1,4 +1,5 @@
 
+# used the following approach to find out where esp32 plugged in
 
 https://gunthervd.github.io/connect-ESP32-with-linux.html
 
