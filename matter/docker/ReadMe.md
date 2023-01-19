@@ -80,4 +80,8 @@ docker run -t -i --device=/dev/ttyUSB0 espressif/esp-matter:chip bash
 
 docker run -t -i --device=/dev/ttyUSB0 espressif/esp-matter:latest bash
 
+--platform linux/arm64/v8
 
+docker pull espressif/esp-matter:latest --platform linux/arm64/v8
+
+docker run -t -i --device=/dev/ttyUSB0 --platform linux/arm64/v8 espressif/esp-matter:latest bash
