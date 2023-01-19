@@ -46,9 +46,33 @@ https://computingforgeeks.com/how-to-install-python-on-ubuntu-linux-system/
 
 # set up environment
 
-        . /opt/esp/esp-idf/export.sh
+        cd /opt/esp/esp-idf/
+        source export.sh
+
+# prereq for matter sdk
+
+apt-get install git gcc g++ pkg-config libssl-dev libdbus-1-dev \
+     libglib2.0-dev libavahi-client-dev ninja-build python3-venv python3-dev \
+     python3-pip unzip libgirepository1.0-dev libcairo2-dev libreadline-dev
+
+# install matter sdk
+
+        git clone --depth 1 https://github.com/espressif/esp-matter.git
+        cd esp-matter
+        git submodule update --init --depth 1
+        ./connectedhomeip/connectedhomeip/scripts/checkout_submodules.py --platform esp32 --shallow
+        ./install.sh
+        cd ..
+
 
 # Docker Image
+
+
+
+# Dockerfile Notes
+
+create a user
+
 
 
 docker pull espressif/idf:release-v4.4
