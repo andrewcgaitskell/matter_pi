@@ -162,4 +162,9 @@ The LED on my devkit is not working:
 
         The devkit and its version that you are using.
 
+# light example refers to esp32s2
+
+https://docs.espressif.com/projects/esp-matter/en/main/esp32/developing.html
+
+
 
