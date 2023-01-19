@@ -50,8 +50,15 @@ idf.py -p /dev/ttyUSB0 flash monitor
 
 'exit' to exit container
 
-docker ps - list running containers
+'docker ps -a' - list running containers
 
+find id of the running container and create suitable name for the image version
+
+docker commit f8bc671b47d7 esp32s2v2:latest
+
+'docker images' show images on system
+
+sudo and pi user have different images
 
 ## matter
 
