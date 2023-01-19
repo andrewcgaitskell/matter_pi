@@ -73,7 +73,11 @@ sudo and pi user have different images
 
 ## matter
 
+note chip did not work
 
 docker run -t -i --device=/dev/ttyUSB0 espressif/esp-matter:chip bash
 
-docker run -t -i --device=/dev/ttyUSB0 espressif/esp-matter:chip bash
+
+docker run -t -i --device=/dev/ttyUSB0 espressif/esp-matter:latest bash
+
+
