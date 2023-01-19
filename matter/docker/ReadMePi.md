@@ -3,6 +3,38 @@
 
 https://gunthervd.github.io/connect-ESP32-with-linux.html
 
+# Docker image frn unbuntu
+
+docker pull ubuntu:20.04 --platform linux/arm64/v8
+
+docker run -t -i --device=/dev/ttyUSB0 ubuntu:20.04 bash
+
+update and upgrade
+
+install python
+
+https://computingforgeeks.com/how-to-install-python-on-ubuntu-linux-system/
+
+        sudo apt update
+        sudo apt install build-essential zlib1g-dev libncurses5-dev \
+        libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev wget libbz2-dev
+
+        wget https://www.python.org/ftp/python/3.10.9/Python-3.10.9.tgz
+
+        tar -xf Python-3.10.*.tgz
+
+        cd Python-3.10.*/
+
+        ./configure --enable-optimizations
+        
+        make -j $(nproc)
+        
+        sudo make install
+
+# Preconditions
+
+sudo apt-get install git wget flex bison gperf python3-pip python3-setuptools cmake ninja-build ccache libffi-dev libssl-dev dfu-util libusb-1.0-0
+
 
 # Docker Image
 
