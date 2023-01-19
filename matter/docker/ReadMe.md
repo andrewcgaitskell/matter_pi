@@ -85,3 +85,81 @@ docker run -t -i --device=/dev/ttyUSB0 espressif/esp-matter:latest bash
 docker pull espressif/esp-matter:latest --platform linux/arm64/v8
 
 docker run -t -i --device=/dev/ttyUSB0 --platform linux/arm64/v8 espressif/esp-matter:latest bash
+
+
+# moving away from pi
+
+
+
+
+trying this
+
+https://docs.espressif.com/projects/esp-matter/en/main/esp32/developing.html
+
+2.1.3 Configuring the Environment
+
+This should be done each time a new terminal is opened
+
+cd /media/andrewcgaitskell/ACG34Plex/esp/esp-idf/; . ./export.sh;
+cd /media/andrewcgaitskell/ACG34Plex/esp/esp-matter/; . ./export.sh;
+cd /media/andrewcgaitskell/ACG34Plex/esp/esp-matter/connectedhomeip/connectedhomeip/examples/all-clusters-app/esp32/
+
+idf.py menuconfig
+idf.py -p /dev/ttyACM0 erase_flash
+idf.py -p /dev/ttyACM0 flash monitor
+
+idf.py -D 'SDKCONFIG_DEFAULTS=sdkconfig_m5stack.defaults' build
+
+
+
+will try this for just esp32 support
+
+git clone --depth 1 https://github.com/espressif/esp-matter.git
+cd esp-matter
+git submodule update --init --depth 1
+./connectedhomeip/connectedhomeip/scripts/checkout_submodules.py --platform esp32 --shallow
+./install.sh
+cd ..
+
+Checking the environment:
+
+20230118 13:00:55 INF Environment passes all checks!
+
+Environment looks good, you are ready to go!
+
+To reactivate this environment in the future, run this in your 
+terminal:
+
+  source ./activate.sh
+
+To deactivate this environment, run this:
+
+  deactivate
+
+
+
+cd /home/andrewcgaitskell/esp/esp-matter/connectedhomeip/connectedhomeip/examples/all-clusters-app/esp32
+
+esp32-s3
+
+git clone -b v4.4.3 --recursive https://github.com/espressif/esp-idf.git esp-idf-v4.4.3
+
+
+
+A1.6 Onboard LED not working
+
+The LED on my devkit is not working:
+
+    Make sure you have selected the proper device. You can explicitly do that by exporting the ESP_MATTER_DEVICE_PATH to the correct path.
+
+    Check the version of your board, and if it has the LED connected to a different pin. If it is different, you can change the led_driver_config_t accordingly in the device.c file.
+
+    If you are still facing issues, reproduce it on the default example for the device and then raise it here. Make sure to share these:
+
+        The complete device logs taken over UART.
+
+        The esp-matter and esp-idf branch you are using.
+
+        The devkit and its version that you are using.
+
+
