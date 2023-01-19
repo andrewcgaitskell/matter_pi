@@ -20,8 +20,18 @@ docker run -t -i --device=/dev/ttyUSB0 ubuntu bash
 
 ### idf
 
+as normal mode failed
+
+as root?
+
 docker run -t -i --device=/dev/ttyUSB0 espressif/idf:release-v4.4 bash
 
+
+
+docker run -t -i --privileged -v /dev/bus/usb:/dev/bus/usb ubuntu bash
+
+
+docker run -t -i --privileged -v /dev/ttyUSB0:/dev/ttyUSB0 idf:latest bash
 
 
 
