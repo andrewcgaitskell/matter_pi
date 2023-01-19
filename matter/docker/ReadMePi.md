@@ -33,8 +33,20 @@ https://computingforgeeks.com/how-to-install-python-on-ubuntu-linux-system/
 
 # Preconditions
 
-sudo apt-get install git wget flex bison gperf python3-pip python3-setuptools cmake ninja-build ccache libffi-dev libssl-dev dfu-util libusb-1.0-0
+        apt-get install git wget flex bison gperf python3-pip python3-setuptools cmake ninja-build ccache libffi-dev libssl-dev dfu-util libusb-1.0-0
 
+# install esp-idf
+
+        mkdir -p /opt/esp
+        cd /opt/esp
+        git clone -b v4.4.2 --recursive https://github.com/espressif/esp-idf.git
+
+        cd /opt/esp/esp-idf
+        ./install.sh esp32 esp32s2
+
+# set up environment
+
+        . /opt/esp/esp-idf/export.sh
 
 # Docker Image
 
