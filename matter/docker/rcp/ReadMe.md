@@ -56,6 +56,10 @@ https://openthread.io/codelabs/openthread-hardware#3
 
 https://openthread.io/platforms
 
+# flash to device
+
+https://github.com/openthread/ot-nrf528xx/blob/main/src/nrf52840/README.md
+
 
 
 
