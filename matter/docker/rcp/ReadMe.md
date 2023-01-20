@@ -34,10 +34,28 @@ https://computingforgeeks.com/how-to-install-python-on-ubuntu-linux-system/
 
 https://developer.nordicsemi.com/nRF_Connect_SDK/doc/2.0.0/matter/openthread_rcp_nrf_dongle.html
 
+# other searches
+
+https://forums.docker.com/t/udevadm-monitor-in-docker-file/125723/2
+
+
+
 # save image
 
         docker commit 31634 ubuntu-python399
         
+#  beginnings
+
+https://openthread.io/guides/border-router/build
+
+https://openthread.io/guides/border-router/raspberry-pi
+
+https://openthread.io/codelabs/openthread-hardware#3
+
+https://openthread.io/platforms
+
+
+
 
 ###
 
