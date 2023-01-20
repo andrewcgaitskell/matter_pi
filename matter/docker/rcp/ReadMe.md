@@ -18,17 +18,22 @@ https://computingforgeeks.com/how-to-install-python-on-ubuntu-linux-system/
         sudo apt install build-essential zlib1g-dev libncurses5-dev \
         libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev wget libbz2-dev
 
-        wget https://www.python.org/ftp/python/3.10.9/Python-3.10.9.tgz
+        wget https://www.python.org/ftp/python/3.9.9/Python-3.9.9.tgz
 
-        tar -xf Python-3.10.*.tgz
+        tar -xf Python-3.9.9.tgz
 
-        cd Python-3.10.*/
+        cd Python-3.9.9/
 
         ./configure --enable-optimizations
         
         make -j $(nproc)
         
         sudo make install
+
+# save image
+
+        docker commit 31634 ubuntu-python399
+        
 
 # Prerequistes for idf
 
