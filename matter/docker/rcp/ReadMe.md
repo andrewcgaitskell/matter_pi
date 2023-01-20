@@ -2,7 +2,9 @@
 
 https://gunthervd.github.io/connect-ESP32-with-linux.html
 
-# Docker image frn unbuntu
+# Docker image from unbuntu
+
+https://openthread.io/guides/border-router/docker/run#physical_rcp
 
 docker pull ubuntu:20.04 --platform linux/arm64/v8
 
