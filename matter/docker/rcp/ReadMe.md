@@ -46,6 +46,16 @@ https://forums.docker.com/t/udevadm-monitor-in-docker-file/125723/2
 
         docker commit 31634 ubuntu-python399
         
+# create new container
+
+        run -t -i --device=/dev/ttyACM0 ubuntu-nordic:v1
+
+# pushing image to docker.io
+
+docker image tag ubuntu-esp-matter:v1 andrewcgaitskell/ubuntu-esp-matter:v1
+
+docker push andrewcgaitskell/ubuntu-esp-matter:v1
+
 #  beginnings
 
 https://openthread.io/guides/border-router/build
@@ -72,6 +82,15 @@ https://unix.stackexchange.com/questions/159094/how-to-install-a-deb-file-by-dpk
 # segger download software
 
 https://www.segger.com/downloads/jlink/
+
+# copying to pi
+
+scp JLink_Linux_V784c_arm64.deb.sig pi64@192.168.1.22:/home/pi64
+
+# copying to container
+
+cp JLink_Linux_V784c_arm64.deb.sig zealous_ishizaka:/opt/downloads/
+cp JLink_Linux_V784c_arm64.deb   blissful_brown:/opt/downloads
 
 
 # flash to device
