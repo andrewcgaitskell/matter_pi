@@ -6,7 +6,7 @@ https://gunthervd.github.io/connect-ESP32-with-linux.html
 
 docker pull ubuntu:20.04 --platform linux/arm64/v8
 
-docker run -t -i --device=/dev/ttyUSB0 ubuntu:20.04 bash
+docker run -t -i --device=/dev/ttyACM0 ubuntu:20.04 bash
 
 update and upgrade
 
