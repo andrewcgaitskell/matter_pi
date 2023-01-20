@@ -30,6 +30,10 @@ https://computingforgeeks.com/how-to-install-python-on-ubuntu-linux-system/
         
         sudo make install
 
+# the followimg did not work for any versions of python
+
+https://developer.nordicsemi.com/nRF_Connect_SDK/doc/2.0.0/matter/openthread_rcp_nrf_dongle.html
+
 # save image
 
         docker commit 31634 ubuntu-python399
@@ -55,6 +59,13 @@ Install NRFTools with tarball:
 3) Make symbolic link for mergehex in /usr/local/bin
         sudo ln -s /opt/mergehex/mergehex /usr/local/bin/mergehex
 
+
+## Jlink
+
+dpkg --unpack /home/Downloads/JLink_Linux_V766c_x86_64.deb
+RUN rm /var/lib/dpkg/info/jlink.postinst -f
+RUN dpkg --configure jlink
+RUN apt install -yf 
 
 
 # Prerequistes for idf
