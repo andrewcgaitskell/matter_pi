@@ -1,4 +1,8 @@
 
+# main example for rcp
+
+https://github.com/openthread/ot-nrf528xx
+
 
 # copy from pi to host
 
