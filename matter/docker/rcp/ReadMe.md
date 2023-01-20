@@ -58,13 +58,49 @@ https://openthread.io/platforms
 
 # install command line tool
 
+download software
+
+https://www.nordicsemi.com/Products/Development-tools/nrf-command-line-tools/download#infotabs
+
+
 https://infocenter.nordicsemi.com/index.jsp?topic=%2Fug_nrf_cltools%2FUG%2Fcltools%2Fnrf_command_line_tools_lpage.html
+
+install deb package
+
+https://unix.stackexchange.com/questions/159094/how-to-install-a-deb-file-by-dpkg-i-or-by-apt
+
+# segger download software
+
+https://www.segger.com/downloads/jlink/
 
 
 # flash to device
 
 https://github.com/openthread/ot-nrf528xx/blob/main/src/nrf52840/README.md
 
+# helpful docker commands
+
+So I think the answer is simpler than many misleading answers above.
+
+To start an existing container which is stopped
+
+docker start <container-name/ID>
+
+To stop a running container
+
+docker stop <container-name/ID>
+
+Then to login to the interactive shell of a container
+
+docker exec -it <container-name/ID> bash
+
+To start an existing container and attach to it in one command
+
+docker start -ai <container-name/ID>
+
+# Getting JLink into Docker container
+
+https://wiki.segger.com/J-Link_Docker_Container
 
 
 
