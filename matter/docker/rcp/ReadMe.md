@@ -56,6 +56,11 @@ https://openthread.io/codelabs/openthread-hardware#3
 
 https://openthread.io/platforms
 
+# install command line tool
+
+https://infocenter.nordicsemi.com/index.jsp?topic=%2Fug_nrf_cltools%2FUG%2Fcltools%2Fnrf_command_line_tools_lpage.html
+
+
 # flash to device
 
 https://github.com/openthread/ot-nrf528xx/blob/main/src/nrf52840/README.md
