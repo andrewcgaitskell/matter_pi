@@ -4,7 +4,8 @@ https://www.nordicsemi.com/Products/Development-software/nRF5-SDK/Download#infot
 https://stackoverflow.com/questions/58739062/how-can-i-setup-a-docker-container-for-developing-on-the-nordic-nrf5-sdk
 
 docker pull ubuntu
-    docker run --privileged=true -it -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix:ro -v /dev/bus/usb:/dev/bus/usb ubuntu
+
+docker run --privileged=true -it -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix:ro -v /dev/bus/usb:/dev/bus/usb ubuntu
 
         // As root in the docker container:
     apt-get update
