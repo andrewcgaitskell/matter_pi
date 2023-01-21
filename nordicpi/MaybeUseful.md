@@ -1,3 +1,5 @@
+https://www.nordicsemi.com/Products/Development-software/nRF5-SDK/Download#infotabs
+
 
 https://stackoverflow.com/questions/58739062/how-can-i-setup-a-docker-container-for-developing-on-the-nordic-nrf5-sdk
 
