@@ -4,6 +4,27 @@ installing docker compose
 
 https://docs.docker.com/compose/install/linux/
 
+useful docker
+
+docker system prune -a
+
+docker build -t firefox-esr:v1 .
+
+docker run --name c_firefox-esr -it firefox-esr:v1
+
+maybe useful
+
+docker run -it --name=GUI_Container --env="DISPLAY" --net=host firefox:latest
+
+
+      docker compose build
+      docker compose up
+
+xauth
+
+xauth list
+
+
 primer
 
 https://www.howtogeek.com/devops/how-to-run-gui-applications-in-a-docker-container/
