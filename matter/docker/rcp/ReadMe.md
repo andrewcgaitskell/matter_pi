@@ -3,6 +3,10 @@
 
 https://github.com/openthread/ot-nrf528xx
 
+# get sdk
+
+https://www.nordicsemi.com/Products/Development-software/nRF5-SDK/Download#infotabs
+
 
 # copy from pi to host
 
