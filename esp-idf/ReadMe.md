@@ -96,6 +96,13 @@ find id of the running container and create suitable name for the image version
 
 sudo and pi user have different images
 
+# ESP Mesh MDF
+
+https://docs.espressif.com/projects/esp-mdf/en/latest/get-started/index.html
+
+
+cd /opt/esp
+git clone --recursive https://github.com/espressif/esp-mdf.git
 
 
 
