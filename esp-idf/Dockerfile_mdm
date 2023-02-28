@@ -1,0 +1,11 @@
+FROM espressif/idf:latest
+RUN apt-get install -y git
+RUN cd /opt/esp/
+RUN git clone --recursive https://github.com/espressif/esp-mdf.git
+RUN export MDF_PATH="/opt/esp/esp-mdf"
+RUN cp -rf /opt/esp/esp-mdf/examples/get-started /home/workdir/
+RUN export CXX="/opt/esp/idf/tools/cmake"
+RUN apt install -y avahi-utils
+RUN idf.py add-dependency espressif/mdns==1.0.3
+RUN idf.py add-dependency espressif/coap
+
