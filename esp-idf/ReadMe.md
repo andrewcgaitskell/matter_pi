@@ -3,6 +3,11 @@
 
 https://gunthervd.github.io/connect-ESP32-with-linux.html
 
+# device
+
+/dev/ttyUSB0
+
+
 # creating space on laptop
 
 https://www.ibm.com/docs/en/cloud-private/3.1.1?topic=pyci-specifying-default-docker-storage-directory-by-using-bind-mount
@@ -11,9 +16,9 @@ https://stackoverflow.com/questions/24309526/how-to-change-the-docker-image-inst
 
 # Docker Image
 
-docker pull espressif/idf:release-v4.4
+docker pull espressif/idf:latest
 
-# Dccker Create Container
+# Docker Create Container
 
 ## interactive sessions
 
@@ -25,35 +30,53 @@ sudo su
 
 docker run -t -i --device=/dev/ttyUSB0 ubuntu bash
 
-### idf
+## idf
 
-as normal mode failed
+### create container
 
-as root?
+docker container create -i -t --name esp_idf espressif/idf:latest
 
-sudo su
+### run container
 
-docker run -t -i --device=/dev/ttyUSB0 espressif/idf:release-v4.4 bash
+docker container start --attach -i esp_idf
+
+### OR create and run container
+
+docker run -it --name mycontainer2 alpine
+
+docker run -it --device=/dev/ttyUSB0 --name esp_idf espressif/idf:latest bash
+
+### exit container and save image
+
+
+'docker ps -a' - list running containers
+
+find id of the running container and create suitable name for the image version
+
+    docker commit f8bc671b47d7  esp32v1:latest
+
+'docker images' show images on system
+
+## run with saved image
+
+docker run -it --device=/dev/ttyUSB0 esp32v1 bash
+
+
+###
 
 saved and using local & changed version
 
-docker run -t -i --device=/dev/ttyUSB0 localhost/esp32s2v1:latest
-
-## not tried
-
-docker run -t -i --privileged -v /dev/bus/usb:/dev/bus/usb ubuntu bash
-
-docker run -t -i --privileged -v /dev/ttyUSB0:/dev/ttyUSB0 idf:latest bash
-
 ## inside container
 
-cd /opt/esp/idf/examples/get-started/blink
+cp -rf /opt/esp/idf/examples/get-started/blink /home/workdir/
 
-idf.py set-target esp32s2
+cd /home/workdir/
+
+idf.py set-target esp32
 
 idf.py menuconfig
 
-set gpio 18
+set gpio 2
 
 idf.py -p /dev/ttyUSB0 flash monitor
 
@@ -63,7 +86,7 @@ idf.py -p /dev/ttyUSB0 flash monitor
 
 ## after interactive session
 
-'docker ps -a' - list running containers
+        docker ps -a # - list running containers
 
 find id of the running container and create suitable name for the image version
 
@@ -72,6 +95,11 @@ find id of the running container and create suitable name for the image version
 'docker images' show images on system
 
 sudo and pi user have different images
+
+
+
+
+#################################################################################
 
 ## matter
 
